@@ -1,0 +1,36 @@
+.test{
+  margin-top: 10px;
+}
+
+
+.slider-wrapper{
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.range-handle{
+  cursor: pointer;
+}
+
+.value-text{
+  text-align: center;
+}
+
+.icon-block{
+  text-align: center;
+}
+.icon-block i{
+  font-size: 60px;
+  color: #195386;
+
+}
+
+.temp-block{
+  margin-top: 10px;
+    text-align: center;
+    font-size: 60px;
+    color: #195386;
+  }
+.state{
+  display: none;
+}
+
