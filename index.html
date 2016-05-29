@@ -9,8 +9,6 @@
 	<link rel="stylesheet" href="dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="dist/powerange.css" />
 	<link rel="stylesheet" href="weather-icons-master/css/weather-icons.css">
-	<script src="libs/jquery.js"></script>
-	<script src="dist/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/style.css"/>
 </head>
 
@@ -84,8 +82,9 @@
 			</div>
 		</div>
 	</div>
-
-<script src="dist/js/mqtt_lib.js"></script>
+	<script src="libs/jquery.js"></script>
+	<script src="dist/js/bootstrap.min.js"></script>
+	<script src="dist/js/mqtt_lib.js"></script>
 <script type='text/javascript' id="__bs_script__">//<![CDATA[
 	document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.11.1.js'><\/script>".replace("HOST", location.hostname));
 	//]]></script>
@@ -126,7 +125,7 @@
     		console.log($(".js-customized").val());
     	})
 
-   
+    	
 
         // called when the client connects
         function onConnect() {
@@ -146,9 +145,9 @@
         
         // called when a message arrives
         function onMessageArrived(message) {
-        		
+        	
 
-			if(message.destinationName == "state")
+        	if(message.destinationName == "state")
         	{
         		$(".state").html(message.payloadString);
         	}
@@ -182,8 +181,8 @@
         	onFailure: onFailure
         });
 
-         })
-    </script>
+    })
+</script>
 
 </body>
 </html>
