@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,19 +21,32 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<h3>Watering system</h3>
+				<div class="panel panel-primary"> 
+					<div class="panel-heading"> 
+						<h3 class="panel-title">Soil humidity:</h3> 
+					</div> 
 
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">Temperature:</h3>
-					</div>
+					<div class="panel-body"> 
+						<div class="progress">
+							<div class="progress-bar progress-bar-striped humidity_bar active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+								50%
+							</div>
+						</div>
+					</div> 
+				</div>
 
+				<div class="panel panel-primary"> 
+					<div class="panel-heading"> 
+						<h3 class="panel-title">Temperature:</h3> 
+					</div> 
 
-					<div class="panel-body">
+					
+					<div class="panel-body"> 
 						<div class="row">
 							<div class="col-md-4  col-md-offset-4 icon-block">
 								<i class="wi wi-thermometer"></i>
 							</div>
-
+							
 						</div>
 						<div class="row">
 							<div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 temp-block">
@@ -36,37 +54,37 @@
 								<i class="wi wi-celsius"></i>
 							</div>
 						</div>
-					</div>
+					</div> 
 				</div>
 
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Air Humidity:</h3>
-          </div>
+        <div class="panel panel-primary"> 
+          <div class="panel-heading"> 
+            <h3 class="panel-title">Air Humidity:</h3> 
+          </div> 
 
-
-          <div class="panel-body">
+          
+          <div class="panel-body"> 
             <div class="row">
               <div class="col-md-4  col-md-offset-4 icon-block">
                 <i class="wi wi-humidity"></i>
               </div>
-
+              
             </div>
             <div class="row">
               <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 air-block">
                 <span> 22 </span>
               </div>
             </div>
-          </div>
+          </div> 
         </div>
 
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">Watering for:</h3>
-					</div>
-					<div class="panel-body">
+				<div class="panel panel-primary"> 
+					<div class="panel-heading"> 
+						<h3 class="panel-title">Watering for:</h3> 
+					</div> 
+					<div class="panel-body"> 
 						<div class="slider-wrapper">
-							<input type="text" class="js-customized soil_1" />
+							<input type="text" class="js-customized soil" />
 						</div>
 
 						<div class="panel panel-default">
@@ -74,73 +92,18 @@
 
 							</div>
 						</div>
-						<button type="button" class="btn btn-primary go_1">Apply</button>
-						<br>
-						<br>
-					</div>
+						<button type="button" class="btn btn-primary go">Apply</button>
+            <br>
+            <br>
+          </div> 
 
-				</div>
+        </div>
 
-<!-- Первый цветок -->
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">Soil humidity:</h3>
-					</div>
+        <button type="button" class="btn btn-primary btn-lg btn-block test" >Watering!</button>
 
-					<div class="panel-body">
-						<div class="progress">
-							<div class="progress-bar progress-bar-striped humidity_bar_1 active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-								50%
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-
-
-        <button type="button" class="btn btn-primary btn-lg btn-block mot1" >Watering!</button> <br>
-
-				<!-- второй цветок -->
-								<div class="panel panel-primary">
-									<div class="panel-heading">
-										<h3 class="panel-title">Soil humidity:</h3>
-									</div>
-
-									<div class="panel-body">
-										<div class="progress">
-											<div class="progress-bar progress-bar-striped humidity_bar_2 active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-												50%
-											</div>
-										</div>
-									</div>
-								</div>
-
-
-				        <button type="button" class="btn btn-primary btn-lg btn-block mot2" >Watering!</button><br>
-
-								<!-- третий цветок -->
-												<div class="panel panel-primary">
-													<div class="panel-heading">
-														<h3 class="panel-title">Soil humidity:</h3>
-													</div>
-
-													<div class="panel-body">
-														<div class="progress">
-															<div class="progress-bar progress-bar-striped humidity_bar_3 active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-																50%
-															</div>
-														</div>
-													</div>
-												</div>
-
-
-								        <button type="button" class="btn btn-primary btn-lg btn-block mot3" >Watering!</button><br>
-
-
-
-
-
+        <br>
+        <div class="state"></div>
+        <br>
 
       </div>
     </div>
@@ -153,10 +116,10 @@
 
     // Basic customization.
     var cust = document.querySelector('.js-customized');
-
     var initCust = new Powerange(cust, { hideRange: true, klass: 'power-ranger', start: 40 });
-
-	  function onChange(el) {
+ 
+    
+    function onChange(el) {
       if (typeof Event === 'function' || !document.fireEvent) {
         var event = document.createEvent('HTMLEvents');
         event.initEvent('change', true, true);
@@ -165,41 +128,29 @@
         el.fireEvent('onchange');
       }
     }
-
+    
     $(document).ready(function(){
     	$(".value-text").html($(".js-customized").val() + "%");
-
+    	
       $(".js-customized").change(function(){
         $(".value-text").html($(".js-customized").val() + "%");
       })
 
-      $(".mot1").click(function(){
+      $(".test").click(function(){
        message = new Paho.MQTT.Message("1");
-       message.destinationName = "motor1";
+       message.destinationName = "wattering_com";
        message.retained = false;
        client.send(message);
       });
 
-			$(".mot2").click(function(){
-       message = new Paho.MQTT.Message("1");
-       message.destinationName = "motor2";
-       message.retained = false;
-       client.send(message);
-      });
-
-			$(".mot3").click(function(){
-       message = new Paho.MQTT.Message("1");
-       message.destinationName = "motor3";
-       message.retained = false;
-       client.send(message);
-      });
-
-      $(".go_1").click(function(){
-        message = new Paho.MQTT.Message($(".soil_1").val());
+      $(".go").click(function(){
+        message = new Paho.MQTT.Message($(".soil").val());
         message.destinationName = "soil_def";
         message.retained = true;
         client.send(message);
       });
+
+
 
     });
 
@@ -209,9 +160,7 @@
           console.log("onConnect");
           client.subscribe("humidity"); //назва топіка
           client.subscribe("temperature");
-          client.subscribe("soil_1");
-					client.subscribe("soil_2");
-					client.subscribe("soil_3");
+          client.subscribe("soil");
         }
 
         // called when the client loses its connection
@@ -221,11 +170,11 @@
         		setTimeout(function() { client.connect() }, 5000);
         	}
         }
-
+        
         // called when a message arrives
         function onMessageArrived(message) {
 
-
+        
           if(message.destinationName == "temperature")
           {
             $(".temp-block span").html(parseInt(message.payloadString));
@@ -236,39 +185,27 @@
             $(".air-block span").html(parseInt(message.payloadString));
           }
 
-          if(message.destinationName == "soil_1")
+          if(message.destinationName == "soil")
           {
-            $(".humidity_bar_1").html(parseInt(message.payloadString)+"%");
-            $(".humidity_bar_1").css("width", parseInt(message.payloadString)+"%");
-          }
-
-					if(message.destinationName == "soil_2")
-          {
-            $(".humidity_bar_2").html(parseInt(message.payloadString)+"%");
-            $(".humidity_bar_2").css("width", parseInt(message.payloadString)+"%");
-          }
-
-					if(message.destinationName == "soil_3")
-          {
-            $(".humidity_bar_3").html(parseInt(message.payloadString)+"%");
-            $(".humidity_bar_3").css("width", parseInt(message.payloadString)+"%");
+            $(".humidity_bar").html(parseInt(message.payloadString)+"%");
+            $(".humidity_bar").css("width", parseInt(message.payloadString)+"%");
           }
         }
-
+        
         function onFailure(invocationContext, errorCode, errorMessage) {
         	var errDiv = document.getElementById("error");
         	errDiv.textContent = "Could not connect to WebSocket server, most likely you're behind a firewall that doesn't allow outgoing connections to port 37501";
         	errDiv.style.display = "block";
         }
-
+        
         var clientId = "ws" + Math.random();
         // Create a client instance
         var client = new Paho.MQTT.Client("m10.cloudmqtt.com", 35050, clientId);
-
+        
         // set callback handlers
         client.onConnectionLost = onConnectionLost;
         client.onMessageArrived = onMessageArrived;
-
+        
         // connect the client
         client.connect({
         	useSSL: true,
